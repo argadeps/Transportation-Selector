@@ -140,20 +140,7 @@ class Cli {
         // perform actions on the car
         this.performActions();
 
-        const truck = new Truck(
-          Cli.generateVin(),
-          answers.color,
-          answers.make,
-          answers.model,
-          parseInt(answers.year),
-          parseInt(answers.weight),
-          parseInt(answers.topSpeed),
-          [],
-           parseInt(answers.towingCapacity)
-        );
-        this.vehicles.push(truck);
-        this.selectedVehicleVin = truck.vin;
-        this.performActions();
+        
       });
   }
 
@@ -198,6 +185,20 @@ class Cli {
         },
       ])
       .then((answers) => {
+        const truck = new Truck(
+          Cli.generateVin(),
+          answers.color,
+          answers.make,
+          answers.model,
+          parseInt(answers.year),
+          parseInt(answers.weight),
+          parseInt(answers.topSpeed),
+          [],
+           parseInt(answers.towingCapacity)
+        );
+        this.vehicles.push(truck);
+        this.selectedVehicleVin = truck.vin;
+        this.performActions(); 
         
       });
   }
